@@ -9,7 +9,7 @@ import org.xutils.db.annotation.Table;
 
 @Table(name = "scheduleExtra")
 public class ExtraData {
-    @Column(name = "id",isId=true,autoGen=false)
+    @Column(name = "id",isId=true,autoGen=true)
     private int id;
     @Column(name = "extra")
     private String extra = "";

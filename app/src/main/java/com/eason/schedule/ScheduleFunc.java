@@ -26,6 +26,7 @@ public class ScheduleFunc{
     public int currentWeek;//当前访问周数
     public LessonData lesson;
     public ExtraData extra;
+    private boolean hasExtra = false;
     private DbManager db;
     private DbManager dbExtra;
 
@@ -111,8 +112,12 @@ public class ScheduleFunc{
     public void getExtra(String week,String weekDay,String fromClass){
         try {
             ExtraData tmp = dbExtra.selector(ExtraData.class).where("week", "=", week).and("weekDay","=",weekDay).and("fromClass","=",fromClass).findFirst();
-            if(tmp!=null) extra = tmp;
+            if(tmp!=null) {
+                extra = tmp;
+                hasExtra = true;
+            }
             else{
+                hasExtra = false;
                 extra.setExtra("");
                 extra.setWeek(week);
                 extra.setWeekDay(weekDay);
@@ -149,7 +154,10 @@ public class ScheduleFunc{
 
     public void updateExtra(){
         try {
-            dbExtra.saveOrUpdate(extra);
+            if(hasExtra)
+                dbExtra.saveOrUpdate(extra);
+            else
+                dbExtra.save(extra);
         } catch (DbException e) {
             e.printStackTrace();
         }
