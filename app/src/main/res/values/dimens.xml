@@ -1,0 +1,31 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="thumbnailWidth">130dp</dimen>
+    <dimen name="largepicWidth">85dp</dimen>
+    <dimen name="scheduleListHeight">80dp</dimen>
+    <dimen name="smallpicWidth">40dp</dimen>
+    <dimen name="toolbarHeight">70dp</dimen>
+    <dimen name="meToolbarHeight">250dp</dimen>
+    <dimen name="userToolbarHeight">200dp</dimen>
+    <dimen name="largepicHeight">140dp</dimen>
+    <dimen name="smallToolbarHeight">48dp</dimen>
+    <dimen name="menuitemSize">32dp</dimen>
+    <dimen name="smallButtonSize">28dp</dimen>
+    <dimen name="tableHeight">50dp</dimen>
+    <dimen name="tableMargin">30dp</dimen>
+    <dimen name="tableheadHeight">32dp</dimen>
+    <dimen name="ic_numberWidth">60dp</dimen>
+    <dimen name="nameTextSize">20sp</dimen>
+    <dimen name="selectPicLength">100dp</dimen>
+
+    <dimen name="padding_step_0">2dp</dimen>
+    <dimen name="padding_step_s">4dp</dimen>
+    <dimen name="padding_step_ss">6dp</dimen>
+    <dimen name="padding_step1">8dp</dimen>
+    <dimen name="padding_step2">16dp</dimen>
+    <dimen name="padding_step3">24dp</dimen>
+    <dimen name="padding_step4">32dp</dimen>
+    <dimen name="padding_step5">40dp</dimen>
+    <dimen name="padding_step6">48dp</dimen>
+    <dimen name="padding_step7">56dp</dimen>
+</resources>

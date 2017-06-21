@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#00000000" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/week1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="1" />
+
+                <Button
+                    android:id="@+id/week2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="2" />
+
+                <Button
+                    android:id="@+id/week3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="3" />
+
+                <Button
+                    android:id="@+id/week4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="4" />
+
+                <Button
+                    android:id="@+id/week5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/week6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="6" />
+
+                <Button
+                    android:id="@+id/week7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="7" />
+
+                <Button
+                    android:id="@+id/week8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="8" />
+
+                <Button
+                    android:id="@+id/week9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="9" />
+
+                <Button
+                    android:id="@+id/week10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="10" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/week11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="11" />
+
+                <Button
+                    android:id="@+id/week12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="12" />
+
+                <Button
+                    android:id="@+id/week13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="13" />
+
+                <Button
+                    android:id="@+id/week14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="14" />
+
+                <Button
+                    android:id="@+id/week15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/week16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="16" />
+
+                <Button
+                    android:id="@+id/week17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="17" />
+
+                <Button
+                    android:id="@+id/week18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="18" />
+
+                <Button
+                    android:id="@+id/week19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="19" />
+
+                <Button
+                    android:id="@+id/week20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="20" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/week21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="21" />
+
+                <Button
+                    android:id="@+id/week22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="22" />
+
+                <Button
+                    android:id="@+id/week23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="23" />
+
+                <Button
+                    android:id="@+id/week24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="24" />
+
+                <Button
+                    android:id="@+id/week25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_weeks_choose_item"
+                    android:text="25" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:paddingTop="20dp" >
+
+            <Button
+                android:id="@+id/dan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="单周"
+                android:background="@drawable/bg_weeks_choose_item"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/shuang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="双周"
+                android:background="@drawable/bg_weeks_choose_item"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="全选"
+                android:background="@drawable/bg_weeks_choose_item"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,1148 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout style="@style/toolbar"
+        android:id="@+id/toolbar">
+        <Button
+            android:id="@+id/back"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/menuitemSize"
+            android:layout_height="@dimen/menuitemSize"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/back2" />
+        <TextView style="@style/titletext"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="textview"
+            android:id="@+id/weekoftoday"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:id="@+id/date" >
+
+        <TextView
+            android:id="@+id/date_month"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/zhou0"
+            android:textColor="@color/text_lesson_menu"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/date_mon"
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/zhou1"
+            android:textColor="@color/text_lesson_menu"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/date_tue"
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/zhou2"
+            android:textColor="@color/text_lesson_menu"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/date_wed"
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/zhou3"
+            android:textColor="@color/text_lesson_menu"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/date_thu"
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/zhou4"
+            android:textColor="@color/text_lesson_menu"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/date_fri"
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/zhou5"
+            android:textColor="@color/text_lesson_menu"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/date_sta"
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/zhou6"
+            android:textColor="@color/text_lesson_menu"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/date_sun"
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/zhou7"
+            android:textColor="@color/text_lesson_menu"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/lessons"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_below="@+id/date"
+        android:scrollbars="none"
+        android:layout_weight="10"
+        android:layout_centerHorizontal="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:background="@drawable/class_menu" >
+
+                <TextView
+                    android:id="@+id/lesson_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:gravity="center"
+                    android:text="  1  "
+                    android:background="@drawable/bg_lessonhead"
+                    android:textColor="@color/text_lesson_menu" />
+
+                <TextView
+                    android:id="@+id/lesson_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:text="  2  "
+                    android:gravity="center"
+                    android:background="@drawable/bg_lessonhead"
+                    android:textColor="@color/text_lesson_menu" />
+
+                <TextView
+                    android:id="@+id/lesson_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:text="  3  "
+                    android:gravity="center"
+                    android:background="@drawable/bg_lessonhead"
+                    android:textColor="@color/text_lesson_menu" />
+
+                <TextView
+                    android:id="@+id/lesson_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:text="  4  "
+                    android:gravity="center"
+                    android:background="@drawable/bg_lessonhead"
+                    android:textColor="@color/text_lesson_menu" />
+                <TextView
+                    android:id="@+id/lesson_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:text="  5  "
+                    android:gravity="center"
+                    android:background="@drawable/bg_lessonhead"
+                    android:textColor="@color/text_lesson_menu" />
+                <TextView
+                    android:id="@+id/lesson_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:text="  6  "
+                    android:gravity="center"
+                    android:background="@drawable/bg_lessonhead"
+                    android:textColor="@color/text_lesson_menu" />
+                <TextView
+                    android:id="@+id/lesson_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:text="  7  "
+                    android:gravity="center"
+                    android:background="@drawable/bg_lessonhead"
+                    android:textColor="@color/text_lesson_menu" />
+                <TextView
+                    android:id="@+id/lesson_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:text="  8  "
+                    android:gravity="center"
+                    android:background="@drawable/bg_lessonhead"
+                    android:textColor="@color/text_lesson_menu" />
+                <TextView
+                    android:id="@+id/lesson_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:text="  9  "
+                    android:gravity="center"
+                    android:background="@drawable/bg_lessonhead"
+                    android:textColor="@color/text_lesson_menu" />
+                <TextView
+                    android:id="@+id/lesson_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:text="  10  "
+                    android:gravity="center"
+                    android:background="@drawable/bg_lessonhead"
+                    android:textColor="@color/text_lesson_menu" />
+                <TextView
+                    android:id="@+id/lesson_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:text="  11  "
+                    android:gravity="center"
+                    android:background="@drawable/bg_lessonhead"
+                    android:textColor="@color/text_lesson_menu" />
+                <TextView
+                    android:id="@+id/lesson_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:text="  12  "
+                    android:gravity="center"
+                    android:background="@drawable/bg_lessonhead"
+                    android:textColor="@color/text_lesson_menu" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:id="@+id/mon"
+                android:background="@drawable/class_lesson"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/mon_lesson_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:textColor="@color/text_lesson"
+                    android:background="@drawable/bg_lesson"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:ems="3" />
+                <TextView
+                    android:id="@+id/mon_lesson_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/mon_lesson_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson" />
+                <TextView
+                    android:id="@+id/mon_lesson_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/mon_lesson_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/mon_lesson_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/mon_lesson_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/mon_lesson_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/mon_lesson_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/mon_lesson_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/mon_lesson_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/mon_lesson_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tue"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/class_lesson"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tue_lesson_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tue_lesson_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tue_lesson_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tue_lesson_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tue_lesson_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tue_lesson_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tue_lesson_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tue_lesson_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tue_lesson_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tue_lesson_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tue_lesson_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/tue_lesson_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/wed"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/class_lesson"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/wed_lesson_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/wed_lesson_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/wed_lesson_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/wed_lesson_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/wed_lesson_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/wed_lesson_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/wed_lesson_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/wed_lesson_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/wed_lesson_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/wed_lesson_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/wed_lesson_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/wed_lesson_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/thu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/class_lesson"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/thu_lesson_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/thu_lesson_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/thu_lesson_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/thu_lesson_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/thu_lesson_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/thu_lesson_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/thu_lesson_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/thu_lesson_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/thu_lesson_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/thu_lesson_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/thu_lesson_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/thu_lesson_12"
+                    android:layout_width="wrap_content"
+                    android:background="@drawable/bg_lesson"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fri"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/class_lesson"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/fri_lesson_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/fri_lesson_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/fri_lesson_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/fri_lesson_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/fri_lesson_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/fri_lesson_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/fri_lesson_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/fri_lesson_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/fri_lesson_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/fri_lesson_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/fri_lesson_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/fri_lesson_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sta"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/class_lesson"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/sta_lesson_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sta_lesson_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sta_lesson_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sta_lesson_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sta_lesson_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sta_lesson_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sta_lesson_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sta_lesson_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sta_lesson_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sta_lesson_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sta_lesson_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sta_lesson_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sun"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/class_lesson"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/sun_lesson_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sun_lesson_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sun_lesson_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sun_lesson_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sun_lesson_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sun_lesson_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sun_lesson_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sun_lesson_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sun_lesson_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sun_lesson_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sun_lesson_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/sun_lesson_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/scheduleListHeight"
+                    android:ems="3"
+                    android:padding="0dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_lesson"
+                    android:textColor="@color/text_lesson"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/lesson_bottom_menu"
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:layout_weight="2">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="备注"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/extra"
+            android:background="@null"/>
+    </LinearLayout>
+
+</LinearLayout>

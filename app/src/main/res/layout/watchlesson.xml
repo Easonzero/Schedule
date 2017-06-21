@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_background_color"
+    android:orientation="vertical">
+
+    <RelativeLayout style="@style/toolbar"
+        android:id="@+id/title" >
+
+        <Button
+            android:id="@+id/Cancel"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/back1" />
+
+        <TextView style="@style/titletext"
+            android:id="@+id/lessontitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Large Text"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:id="@+id/up_table"
+        android:background="@drawable/create_table"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/LessonName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"  >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/watch_lesson_lessonname" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/lesson_name"
+                style="@style/Typography_Subhead"
+                android:layout_width="186dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.95"
+                android:background="#00000000"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="未填写"
+                android:textColor="@color/typography_color_text" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Teacher"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_weight="0.8"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/watch_lesson_teacher" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/teacher"
+                style="@style/Typography_Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.65"
+                android:background="#00000000"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="未填写"
+                android:textColor="@color/typography_color_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Location"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/watch_lesson_classroom" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/location"
+                style="@style/Typography_Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:background="#00000000"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="未填写"
+                android:textColor="@color/typography_color_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Classnum"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" >
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/watch_lesson_classnum" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/classnum"
+                style="@style/Typography_Subhead"
+                android:layout_width="186dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="未填写"
+                android:textColor="@color/typography_color_text" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Weeknum"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" >
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/watch_lesson_weeknum" />
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/weeknum"
+                style="@style/Typography_Subhead"
+                android:layout_width="186dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="未填写"
+                android:textColor="@color/typography_color_text" >
+            </TextView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/edit"
+        android:layout_width="45dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/up_table"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/watch_lesson_edit" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/up_table"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/watch_lesson_delete" />
+
+</LinearLayout>

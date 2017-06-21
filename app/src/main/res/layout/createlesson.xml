@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/base_background_color" >
+
+    <RelativeLayout style="@style/toolbar"
+        android:id="@+id/title" >
+
+        <Button
+            android:id="@+id/Cancel"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/back1" />
+
+        <Button
+            android:id="@+id/Confirm"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="#00000000"
+            android:textColor="#FFFFFFFF"
+            android:layout_marginBottom="-10dp"
+            android:text="保存" />
+
+        <TextView style="@style/titletext"
+            android:text="编辑课程"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="182dp"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="10dp"
+        android:id="@+id/up_table"
+        android:background="@drawable/create_table"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/LessonName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"  >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="23dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/create_table_lessonname" />
+
+            <EditText
+                android:id="@+id/lesson_name"
+                style="@style/Typography_Subhead"
+                android:layout_width="186dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="未填写"
+                android:textColor="@color/typography_color_text" >
+            </EditText>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginLeft="@dimen/padding_step3"
+            android:background="#c8c7cc" />
+
+        <LinearLayout
+            android:id="@+id/Teacher"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="23dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/create_table_teacher" />
+
+            <EditText
+                android:id="@+id/teacher"
+                style="@style/Typography_Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="未填写"
+                android:textColor="@color/typography_color_text" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginLeft="@dimen/padding_step3"
+            android:background="#c8c7cc" />
+
+        <LinearLayout
+            android:id="@+id/Location"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true" >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="23dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/create_table_classroom" />
+
+            <EditText
+                android:id="@+id/location"
+                style="@style/Typography_Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00000000"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="未填写"
+                android:textColor="@color/typography_color_text" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="121dp"
+        android:layout_below="@+id/up_table"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/create_table2"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ClassFromTo"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" >
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="60dp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/create_table_lessonnum" />
+
+            <TextView
+                android:id="@+id/class_from_to"
+                style="@style/Typography_Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:layout_weight="0.55"
+                android:gravity="center_vertical"
+                android:hint="未填写"
+                android:textColor="@color/typography_color_text" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/create_table_dra" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginLeft="@dimen/padding_step3"
+            android:background="#c8c7cc" />
+
+        <LinearLayout
+            android:id="@+id/WeekFromTo"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" >
+
+            <View
+                android:layout_width="5dp"
+                android:layout_height="60dp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/create_table_weeknum" />
+
+            <TextView
+                android:id="@+id/week_from_to"
+                style="@style/Typography_Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.55"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="未填写"
+                android:textColor="@color/typography_color_text" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/create_table_dra" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
