@@ -8,7 +8,7 @@
         android:id="@+id/toolbar">
         <Button
             android:id="@+id/back"
-            style="?android:attr/buttonStyleSmall"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="@dimen/menuitemSize"
             android:layout_height="@dimen/menuitemSize"
             android:layout_alignParentBottom="true"

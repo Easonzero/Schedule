@@ -10,6 +10,7 @@
 
         <Button
             android:id="@+id/Cancel"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="38dp"
             android:layout_height="30dp"
             android:layout_alignParentBottom="true"

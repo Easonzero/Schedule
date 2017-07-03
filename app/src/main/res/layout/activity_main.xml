@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout style="@style/toolbar"
+        android:id="@+id/toolbar">
+        <TextView style="@style/titletext"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:text="一个课程表"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <View
+            android:id="@+id/lesson_table"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/tableheadHeight"
+            android:background="@drawable/ic_todaylesson" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+        <GridView
+            android:id="@+id/today_lesson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="2"
+            android:paddingLeft="0dp"
+            android:scrollbars="none"
+            android:listSelector="#00000000"
+            android:background="#fcfdfd" >
+        </GridView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lessonNoItem"
+            android:visibility="gone" >
+            <TextView
+                style="@style/Typography_Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="sans-serif"
+                android:text="今天没有课感觉自己萌萌哒"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/typography_color_hinttext" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:text="进入课程表"
+        style="@style/tableitem"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/enter"
+        android:layout_margin="50dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/enter"/>
+</LinearLayout>

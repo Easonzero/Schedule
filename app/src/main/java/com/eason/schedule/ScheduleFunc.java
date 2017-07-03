@@ -19,6 +19,7 @@ public class ScheduleFunc{
     private static final String[] weekdays = new String[]{"周一","周二","周三","周四","周五","周六","周日"};
     private static final String[] weeksNum = new String[]{"第1周","第2周","第3周","第4周","第5周","第6周","第7周","第8周","第9周","第10周","第11周","第12周",
             "第13周","第14周","第15周","第16周","第17周","第18周","第19周","第20周","第21周","第22周","第23周","第24周","第25周",};
+    private static final String[] classToTime = new String[]{"8:00","9:00","10:00","11:00","13:45","14:45","15:45","16:45","6:30","7:30","8:30","9:30"};
     public int initWeek;
     public int initDate;//表示一年中第initdate周为校历第initweek周
     public int _today;//表示今天星期几
@@ -58,6 +59,8 @@ public class ScheduleFunc{
     public String getWeekStr(int weekday){
         return weekdays[weekday-1];
     }
+
+    public String getTimeStr(int classNum){return classToTime[classNum-1];}
 
     public String getWeekNumStr(int weeknum){
         return weeksNum[weeknum-1];

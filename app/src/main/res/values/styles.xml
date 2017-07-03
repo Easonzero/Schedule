@@ -61,6 +61,17 @@
         <item name="android:orientation">horizontal</item>
     </style>
 
+    <style name="tableitem" parent="Widget.AppCompat.Button.Borderless.Colored">
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">@dimen/padding_step1</item>
+        <item name="android:paddingRight">@dimen/padding_step2</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/tableHeight</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:background">@drawable/enter</item>
+        <item name="android:clickable">true</item>
+    </style>
+
     <style name="line">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0.5dip</item>
