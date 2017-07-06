@@ -1,38 +1,36 @@
-package com.eason.schedule;
+package com.eason.schedule.activity;
+
+import org.xutils.view.annotation.*;
 
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.xutils.view.annotation.ContentView;
-import org.xutils.view.annotation.Event;
-import org.xutils.view.annotation.ViewInject;
+import com.eason.schedule.widget.PickWeeksDialog;
+import com.eason.schedule.widget.PickclassesDialog;
+import com.eason.schedule.R;
+import com.eason.schedule.ScheduleFunc;
 
 /**
  * Created by eason on 17-6-21.
  */
 
 @ContentView(R.layout.createlesson)
-public class ChangeLesson extends BaseActivity {
+public class CreateLesson extends BaseActivity {
     @ViewInject(R.id.lesson_name)
-    private EditText lessonName;
+    EditText lessonName;
     @ViewInject(R.id.location)
-    private EditText location;
+    EditText location;
     @ViewInject(R.id.teacher)
-    private EditText teacher;
-    @ViewInject(R.id.ClassFromTo)
-    private LinearLayout classFromTo;
-    @ViewInject(R.id.WeekFromTo)
-    private LinearLayout weekFromTo;
+    EditText teacher;
     @ViewInject(R.id.class_from_to)
-    private TextView _classFromTo;
+    TextView _classFromTo;
     @ViewInject(R.id.week_from_to)
-    private TextView _weekFromTo;
-
+    TextView _weekFromTo;
     String[] weeks = new String[25];
     String[] term = new String[25];
     @Override
@@ -41,16 +39,14 @@ public class ChangeLesson extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         initData();
+
+        ScheduleFunc.getInstance().lesson.setWeeknumDelay(_weekFromTo.getText().toString());
     }
 
     private void initData(){
-        this.setTitle("修改课程");
+        this.setTitle("添加课程");
         _classFromTo.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().lesson.getWeekDay()))
-                +" " + ScheduleFunc.getInstance().lesson.getFromClass() + " - " + ScheduleFunc.getInstance().lesson.getToClass() + "节");
-        _weekFromTo.setText(ScheduleFunc.getInstance().lesson.getWeeknumDelay());
-        lessonName.setText(ScheduleFunc.getInstance().lesson.getLessonName());
-        location.setText(ScheduleFunc.getInstance().lesson.getClassRoom());
-        teacher.setText(ScheduleFunc.getInstance().lesson.getTeacher());
+                +" " + ScheduleFunc.getInstance().lesson.getFromClass() + "节");
         for(int i = 0;i < 25;i++){
             weeks[i] = "false";
         }
@@ -58,14 +54,14 @@ public class ChangeLesson extends BaseActivity {
 
     @Event(R.id.ClassFromTo)
     private void onClassClick(View view){
-        final PickclassesDialog dialog = new PickclassesDialog(ChangeLesson.this,ScheduleFunc.getInstance().lesson.getWeekDay(),ScheduleFunc.getInstance().lesson.getFromClass());
+        final PickclassesDialog dialog = new PickclassesDialog(CreateLesson.this,ScheduleFunc.getInstance().lesson.getWeekDay(),ScheduleFunc.getInstance().lesson.getFromClass());
         dialog.setTitle("上课节数选择")
                 .setPositiveButton("确定", new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        ScheduleFunc.getInstance().lesson.setWeekDay((dialog.date + 1) + "");
-                        ScheduleFunc.getInstance().lesson.setFromClass((dialog.fromClass + 1) + "");
-                        ScheduleFunc.getInstance().lesson.setToClass((dialog.toClass + 1) + "");
+                        ScheduleFunc.getInstance().lesson.setWeekDay(dialog.date + "");
+                        ScheduleFunc.getInstance().lesson.setFromClass(dialog.fromClass + "");
+                        ScheduleFunc.getInstance().lesson.setToClass(dialog.toClass + "");
                         _classFromTo.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().lesson.getWeekDay()))
                                 +" "+ScheduleFunc.getInstance().lesson.getFromClass()+"-"+ScheduleFunc.getInstance().lesson.getToClass()+"节");
                         dialog.dismiss();
@@ -83,13 +79,13 @@ public class ChangeLesson extends BaseActivity {
     @Event(R.id.WeekFromTo)
     private void onWeekClick(View view){
         equalString(term,weeks);
-        final PickWeeksDialog dialog = new PickWeeksDialog(ChangeLesson.this);
+        final PickWeeksDialog dialog = new PickWeeksDialog(CreateLesson.this);
         final View mView = dialog.view;
         final Button dan = (Button) mView.findViewById(R.id.dan);
         final Button shuang = (Button) mView.findViewById(R.id.shuang);
         final Button all = (Button) mView.findViewById(R.id.all);
 
-        dan.setOnClickListener(new View.OnClickListener(){
+        dan.setOnClickListener(new OnClickListener(){
 
             @Override
             public void onClick(View dan) {
@@ -111,7 +107,7 @@ public class ChangeLesson extends BaseActivity {
 
         });
 
-        shuang.setOnClickListener(new View.OnClickListener(){
+        shuang.setOnClickListener(new OnClickListener(){
 
             @Override
             public void onClick(View shuang) {
@@ -132,7 +128,7 @@ public class ChangeLesson extends BaseActivity {
 
         });
 
-        all.setOnClickListener(new View.OnClickListener(){
+        all.setOnClickListener(new OnClickListener(){
 
             @Override
             public void onClick(View all) {
@@ -262,13 +258,18 @@ public class ChangeLesson extends BaseActivity {
         ScheduleFunc.getInstance().lesson.setClassRoom(location.getText().toString());
         ScheduleFunc.getInstance().lesson.setTeacher(teacher.getText().toString());
         ScheduleFunc.getInstance().lesson.setLessonName(lessonName.getText().toString());
-        ScheduleFunc.getInstance().update();
-        ChangeLesson.this.finish();
+        for(int weeknum=1;weeknum<=weeks.length;weeknum++){
+            if(weeks[weeknum-1].equals("true")){
+                ScheduleFunc.getInstance().lesson.setWeek(weeknum+"");
+                ScheduleFunc.getInstance().add();
+            }
+        }
+        CreateLesson.this.finish();
     }
 
     @Event(R.id.Cancel)
     private void onCancelClick(View view){
-        ChangeLesson.this.finish();
+        CreateLesson.this.finish();
     }
 
     private void equalString(String[] str1,String[] str2){

@@ -1,4 +1,4 @@
-package com.eason.schedule;
+package com.eason.schedule.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,6 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.eason.schedule.R;
+import com.eason.schedule.ScheduleFunc;
+import com.eason.schedule.Utils;
+import com.eason.schedule.data.LessonData;
 
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -38,8 +43,7 @@ public class LessonGridAdapter extends BaseAdapter {
     private List<LessonData> lessonDatas = null;
 
     public LessonGridAdapter(Context context){
-        lessonDatas = ScheduleFunc.getInstance().find();
-        if(lessonDatas == null) lessonDatas = new ArrayList();
+        update();
         inflater = LayoutInflater.from(context);
     }
 

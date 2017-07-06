@@ -1,4 +1,4 @@
-package com.eason.schedule;
+package com.eason.schedule.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.RelativeLayout;
+
+import com.eason.schedule.adapter.LessonGridAdapter;
+import com.eason.schedule.R;
+import com.eason.schedule.ScheduleFunc;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -31,10 +35,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initLessonView(Context context){
-        if(adapter_lesson==null)
-            adapter_lesson = new LessonGridAdapter(context);
-        else
-            adapter_lesson.notifyDataSetChanged();
+        adapter_lesson = new LessonGridAdapter(context);
 
         if(adapter_lesson.getCount() != 0){
             lessonList.setAdapter(adapter_lesson);
@@ -49,5 +50,11 @@ public class MainActivity extends BaseActivity {
     private void onEnterClick(View view){
         Intent intent = new Intent(MainActivity.this,ScheduleActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initLessonView(this);
     }
 }

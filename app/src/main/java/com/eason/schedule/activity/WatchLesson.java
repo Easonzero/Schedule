@@ -1,9 +1,12 @@
-package com.eason.schedule;
+package com.eason.schedule.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import com.eason.schedule.R;
+import com.eason.schedule.ScheduleFunc;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;

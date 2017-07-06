@@ -1,4 +1,4 @@
-package com.eason.schedule;
+package com.eason.schedule.widget;
 
 /**
  * Created by eason on 17-6-21.

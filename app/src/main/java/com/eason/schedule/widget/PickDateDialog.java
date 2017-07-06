@@ -1,9 +1,11 @@
-package com.eason.schedule;
+package com.eason.schedule.widget;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
+
+import com.eason.schedule.R;
 
 import me.drakeet.materialdialog.MaterialDialog;
 

@@ -1,4 +1,4 @@
-package com.eason.schedule;
+package com.eason.schedule.activity;
 
 import android.os.Build;
 import android.os.Bundle;

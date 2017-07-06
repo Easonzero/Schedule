@@ -1,4 +1,4 @@
-package com.eason.schedule;
+package com.eason.schedule.data;
 
 import org.xutils.db.annotation.Column;
 import org.xutils.db.annotation.Table;

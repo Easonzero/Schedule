@@ -2,6 +2,9 @@ package com.eason.schedule;
 
 import android.content.Context;
 
+import com.eason.schedule.data.ExtraData;
+import com.eason.schedule.data.LessonData;
+
 import org.xutils.DbManager;
 import org.xutils.ex.DbException;
 import org.xutils.x;
@@ -30,10 +33,13 @@ public class ScheduleFunc{
     private boolean hasExtra = false;
     private DbManager db;
     private DbManager dbExtra;
+    private Context ctx;
 
     private ScheduleFunc(){}
 
     public void init(Context context){
+        this.ctx = context;
+
         DbManager.DaoConfig daoConfig = new DbManager.DaoConfig()
                 .setDbName("schedule")
                 .setDbVersion(1);
@@ -134,6 +140,7 @@ public class ScheduleFunc{
     public void add() {
         try {
             db.save(lesson);
+            setAlarm(lesson);
         } catch (DbException e) {
             e.printStackTrace();
         }
@@ -142,6 +149,7 @@ public class ScheduleFunc{
     public void delete() {
         try {
             db.delete(lesson);
+            cancelAlarm(lesson);
         } catch (DbException e) {
             e.printStackTrace();
         }
@@ -150,6 +158,7 @@ public class ScheduleFunc{
     public void update() {
         try {
             db.saveOrUpdate(lesson);
+            setAlarm(lesson);
         } catch (DbException e) {
             e.printStackTrace();
         }
@@ -190,5 +199,16 @@ public class ScheduleFunc{
             c = c - 1;
         }
         return c;
+    }
+
+    private void setAlarm(LessonData ld){
+        String[] tmp = getTimeStr(Integer.parseInt(ld.getFromClass())).split(":");
+        int hour = Integer.parseInt(tmp[0]);
+        int min = Integer.parseInt(tmp[1]);
+        Utils.setAlarm(ctx,2,12,20,ld.getId(),Integer.parseInt(ld.getWeekDay()),ld.getLessonName()+"开始上课了，地点:"+ld.getClassRoom(),2);
+    }
+
+    private void cancelAlarm(LessonData ld){
+        Utils.cancelAlarm(ctx,Utils.ALARM_ACTION,ld.getId());
     }
 }

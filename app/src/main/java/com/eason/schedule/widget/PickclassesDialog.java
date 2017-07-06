@@ -1,4 +1,4 @@
-package com.eason.schedule;
+package com.eason.schedule.widget;
 
 /**
  * Created by eason on 17-6-21.
@@ -7,6 +7,9 @@ package com.eason.schedule;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+
+import com.eason.schedule.R;
+
 import me.drakeet.materialdialog.MaterialDialog;
 
 import java.util.Arrays;

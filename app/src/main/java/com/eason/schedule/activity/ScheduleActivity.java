@@ -1,4 +1,4 @@
-package com.eason.schedule;
+package com.eason.schedule.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,12 @@ import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+
+import com.eason.schedule.data.LessonData;
+import com.eason.schedule.R;
+import com.eason.schedule.ScheduleFunc;
+import com.eason.schedule.Utils;
+
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
@@ -97,8 +103,13 @@ public class ScheduleActivity extends BaseActivity{
         if(MotionEvent.ACTION_MOVE == event.getAction()){
             if(id != (-1)){
                 lesson = (TextView) findViewById(id);
-                lesson.setBackgroundResource(R.drawable.bg_lesson);
-                lesson.setTag("none");
+                if(lesson.getTag().toString().equals("add")){
+                    lesson.setBackgroundResource(R.drawable.bg_lesson);
+                    lesson.setTag("none");
+                }else if(lesson.getTag().toString().equals("select")){
+                    setLessonBackground("noraml",lesson,Integer.parseInt(lesson.getTag(R.id.resindex).toString()));
+                    lesson.setTag("lesson");
+                }
                 id = -1;
             }
         }
@@ -262,6 +273,7 @@ public class ScheduleActivity extends BaseActivity{
 
     public void onBackPressed() {
         super.onBackPressed();
+
     }
 
     @Event(R.id.back)
