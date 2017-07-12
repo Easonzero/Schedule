@@ -19,6 +19,14 @@
             android:layout_alignParentBottom="true"
             android:text="textview"
             android:id="@+id/weekoftoday"/>
+        <Button
+            android:id="@+id/sync"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="@dimen/menuitemSize"
+            android:layout_height="@dimen/menuitemSize"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:drawable/stat_notify_sync_noanim" />
     </RelativeLayout>
 
     <LinearLayout

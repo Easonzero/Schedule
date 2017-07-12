@@ -4,13 +4,15 @@ import org.xutils.db.annotation.Column;
 import org.xutils.db.annotation.Table;
 
 /**
- * Created by eason on 17-6-21.
+ * Created by eason on 7/12/17.
  */
 
-@Table(name = "scheduleExtra")
-public class ExtraData {
+@Table(name = "serverExtra")
+public class ServerExtraData {
     @Column(name = "id",isId=true,autoGen=true)
     private int id;
+    @Column(name = "uid")
+    private String uid;
     @Column(name = "extra")
     private String extra = "";
     @Column(name = "fromClass")
@@ -20,52 +22,61 @@ public class ExtraData {
     @Column(name = "week")
     private String week;
 
-    public ExtraData(){}
+    public ServerExtraData(){}
 
-    public ExtraData(ServerExtraData extraData){
+    public ServerExtraData(String uid,ExtraData extraData){
+        this.uid = uid;
         this.weekDay = extraData.getWeekDay();
         this.week = extraData.getWeek();
         this.fromClass = extraData.getFromClass();
         this.extra = extraData.getExtra();
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public String getExtra() {
-        return extra;
-    }
-
     public void setExtra(String extra) {
         this.extra = extra;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getWeekDay() {
-        return weekDay;
-    }
-
-    public String getFromClass() {
-        return fromClass;
-    }
-
-    public String getWeek() {
-        return week;
     }
 
     public void setFromClass(String fromClass) {
         this.fromClass = fromClass;
     }
 
-    public void setWeekDay(String weekDay) {
-        this.weekDay = weekDay;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public void setWeek(String week) {
         this.week = week;
+    }
+
+    public void setWeekDay(String weekDay) {
+        this.weekDay = weekDay;
+    }
+
+    public String getExtra() {
+        return extra;
+    }
+
+    public String getFromClass() {
+        return fromClass;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public String getWeek() {
+        return week;
+    }
+
+    public String getWeekDay() {
+        return weekDay;
     }
 }

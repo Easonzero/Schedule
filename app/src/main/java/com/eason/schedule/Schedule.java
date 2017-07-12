@@ -12,5 +12,7 @@ public class Schedule extends Application{
     public void onCreate() {
         super.onCreate();
         x.Ext.init(this);
+        HttpsFunc.getInstance().init(this);
+        ScheduleFunc.getInstance().init(this);
     }
 }

@@ -9,6 +9,7 @@ import org.xutils.DbManager;
 import org.xutils.ex.DbException;
 import org.xutils.x;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -88,6 +89,16 @@ public class ScheduleFunc{
         return data;
     }
 
+    public List<LessonData> findAll() {
+        List<LessonData> dataList = null;
+        try {
+            dataList = db.selector(LessonData.class).findAll();
+        } catch (DbException e) {
+            e.printStackTrace();
+        }
+        return dataList;
+    }
+
     public List<LessonData> find(String week) {
         List<LessonData> dataList = null;
         try {
@@ -137,6 +148,16 @@ public class ScheduleFunc{
         }
     }
 
+    public List<ExtraData> getAllExtra(){
+        List<ExtraData> extraDatas = new ArrayList<>();
+        try {
+            extraDatas = dbExtra.selector(ExtraData.class).findAll();
+        } catch (DbException e) {
+            e.printStackTrace();
+        }
+        return extraDatas;
+    }
+
     public void add() {
         try {
             db.save(lesson);
@@ -155,6 +176,14 @@ public class ScheduleFunc{
         }
     }
 
+    public void deleteExtra(){
+        try {
+            dbExtra.delete(extra);
+        } catch (DbException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void update() {
         try {
             db.saveOrUpdate(lesson);
@@ -164,12 +193,50 @@ public class ScheduleFunc{
         }
     }
 
+    public void clear(){
+        List<LessonData> lessonDatas = findAll();
+        for(LessonData ld : lessonDatas){
+            lesson = ld;
+            delete();
+        }
+    }
+
+    public void sync(List<LessonData> lessonDatas){
+        for(LessonData ld : lessonDatas){
+            lesson = ld;
+            add();
+        }
+    }
+
+    public void clearExtra(){
+        List<ExtraData> extraDatas = getAllExtra();
+        for(ExtraData ed : extraDatas){
+            extra = ed;
+            deleteExtra();
+        }
+    }
+
+    public void syncExtra(List<ExtraData> extraDatas){
+        for(ExtraData ed : extraDatas){
+            extra = ed;
+            addExtra();
+        }
+    }
+
     public void updateExtra(){
         try {
             if(hasExtra)
                 dbExtra.saveOrUpdate(extra);
             else
                 dbExtra.save(extra);
+        } catch (DbException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addExtra(){
+        try {
+            dbExtra.save(extra);
         } catch (DbException e) {
             e.printStackTrace();
         }
@@ -205,7 +272,7 @@ public class ScheduleFunc{
         String[] tmp = getTimeStr(Integer.parseInt(ld.getFromClass())).split(":");
         int hour = Integer.parseInt(tmp[0]);
         int min = Integer.parseInt(tmp[1]);
-        Utils.setAlarm(ctx,2,12,20,ld.getId(),Integer.parseInt(ld.getWeekDay()),ld.getLessonName()+"开始上课了，地点:"+ld.getClassRoom(),2);
+        Utils.setAlarm(ctx,2,hour,min,ld.getId(),Integer.parseInt(ld.getWeekDay()),ld.getLessonName()+"开始上课了，地点:"+ld.getClassRoom(),2);
     }
 
     private void cancelAlarm(LessonData ld){

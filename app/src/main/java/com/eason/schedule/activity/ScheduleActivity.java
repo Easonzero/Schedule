@@ -2,10 +2,13 @@ package com.eason.schedule.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.accessibility.AccessibilityManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -13,12 +16,19 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.ScrollView;
 import android.widget.SimpleAdapter;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.eason.schedule.HttpsFunc;
+import com.eason.schedule.Schedule;
+import com.eason.schedule.data.ExtraData;
 import com.eason.schedule.data.LessonData;
 import com.eason.schedule.R;
 import com.eason.schedule.ScheduleFunc;
 import com.eason.schedule.Utils;
+import com.eason.schedule.data.ServerExtraData;
+import com.eason.schedule.data.ServerLessonData;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -28,6 +38,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+
+import me.drakeet.materialdialog.MaterialDialog;
 
 /**
  * Created by eason on 7/3/17.
@@ -50,6 +62,40 @@ public class ScheduleActivity extends BaseActivity{
     private TextView lesson;
     private LinearLayout today;
     private PopupWindow pwMyPopWindow;
+
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg){
+            switch(msg.what){
+                case 0:
+                    List<ServerLessonData> slds = (List<ServerLessonData>) msg.obj;
+                    List<LessonData> lessonDatas = new ArrayList<LessonData>();
+                    for(ServerLessonData lessonData:slds){
+                        LessonData ld = new LessonData(lessonData);
+                        lessonDatas.add(ld);
+                    }
+                    ScheduleFunc.getInstance().clear();
+                    ScheduleFunc.getInstance().sync(lessonDatas);
+                    Toast.makeText(ScheduleActivity.this,"同步成功", Toast.LENGTH_SHORT).show();
+                    ScheduleActivity.this.finish();
+                    break;
+                case 1:
+                    Toast.makeText(ScheduleActivity.this,"上传成功", Toast.LENGTH_SHORT).show();
+                    break;
+                case 2:
+                    List<ServerExtraData> seds = (List<ServerExtraData>) msg.obj;
+                    List<ExtraData> extraDatas = new ArrayList<ExtraData>();
+                    for(ServerExtraData extraData:seds){
+                        ExtraData ed = new ExtraData(extraData);
+                        extraDatas.add(ed);
+                    }
+                    ScheduleFunc.getInstance().clearExtra();
+                    ScheduleFunc.getInstance().syncExtra(extraDatas);
+                    break;
+            }
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +133,43 @@ public class ScheduleActivity extends BaseActivity{
                 return false;
             }
         });
+    }
+
+    @Event(R.id.sync)
+    private void onSyncClick(View view){
+        final MaterialDialog dialog = new MaterialDialog(this);
+        LayoutInflater factory = LayoutInflater.from(this);
+        View layout = factory.inflate(R.layout.pick_syncinfo_dialog, null);
+        final EditText uid = (EditText) layout.findViewById(R.id.uid);
+        dialog.setTitle("同步");
+        dialog.setContentView(layout);
+        dialog.setPositiveButton("同步", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HttpsFunc.getInstance().connect(handler).sync(uid.getText().toString());
+                dialog.dismiss();
+            }
+        });
+        dialog.setNegativeButton("上传", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                List<LessonData> lessonDatas = ScheduleFunc.getInstance().findAll();
+                List<ServerLessonData> serverLessonDatas = new ArrayList<ServerLessonData>();
+                for(LessonData lessonData:lessonDatas){
+                    ServerLessonData sld = new ServerLessonData(HttpsFunc.getInstance().userData.getUid(),lessonData);
+                    serverLessonDatas.add(sld);
+                }
+                List<ExtraData> extraDatas = ScheduleFunc.getInstance().getAllExtra();
+                List<ServerExtraData> serverExtraDatas = new ArrayList<ServerExtraData>();
+                for(ExtraData extraData:extraDatas){
+                    ServerExtraData sed = new ServerExtraData(HttpsFunc.getInstance().userData.getUid(),extraData);
+                    serverExtraDatas.add(sed);
+                }
+                HttpsFunc.getInstance().connect(handler).upload(serverLessonDatas,serverExtraDatas);
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
     }
 
     @Event(R.id.weekoftoday)

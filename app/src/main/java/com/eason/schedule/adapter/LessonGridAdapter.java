@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.eason.schedule.R;
 import com.eason.schedule.ScheduleFunc;
-import com.eason.schedule.Utils;
 import com.eason.schedule.data.LessonData;
 
 import org.xutils.view.annotation.ViewInject;

@@ -28,6 +28,19 @@ public class LessonData {
     @Column(name = "weeknumDelay")
     private String weeknumDelay;
 
+    public LessonData(){}
+
+    public LessonData(ServerLessonData lessonData){
+        this.lessonName = lessonData.getLessonName();
+        this.classRoom = lessonData.getClassRoom();
+        this.teacher = lessonData.getTeacher();
+        this.weekDay = lessonData.getWeekDay();
+        this.week = lessonData.getWeek();
+        this.fromClass = lessonData.getFromClass();
+        this.toClass = lessonData.getToClass();
+        this.weeknumDelay = lessonData.getWeeknumDelay();
+    }
+
     public int getId() {
         return id;
     }

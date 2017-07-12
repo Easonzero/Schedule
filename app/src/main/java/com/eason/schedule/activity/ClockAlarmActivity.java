@@ -21,6 +21,7 @@ public class ClockAlarmActivity extends Activity {
     private Vibrator vibrator;
     MaterialDialog dialog;
     int flag = 0;
+    boolean cancel = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +49,7 @@ public class ClockAlarmActivity extends Activity {
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
+                if(cancel) return;
                 if (flag == 1 || flag == 2) {
                     mediaPlayer.stop();
                     mediaPlayer.release();
@@ -63,6 +65,7 @@ public class ClockAlarmActivity extends Activity {
 
             @Override
             public void onClick(View v) {
+                cancel = true;
                 if (flag == 1 || flag == 2) {
                     mediaPlayer.stop();
                     mediaPlayer.release();

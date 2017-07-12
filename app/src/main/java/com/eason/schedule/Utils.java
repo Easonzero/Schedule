@@ -7,7 +7,13 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Build;
 import java.util.Calendar;
+import java.util.Map;
+
 import android.util.DisplayMetrics;
+
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
 
 /**
  * Created by eason on 17-6-21.
@@ -75,7 +81,7 @@ public class Utils {
         PendingIntent sender = PendingIntent.getBroadcast(context, id, intent, PendingIntent
                 .FLAG_CANCEL_CURRENT);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            am.setWindow(AlarmManager.RTC_WAKEUP, 0,//calMethod(week, calendar.getTimeInMillis()),
+            am.setWindow(AlarmManager.RTC_WAKEUP, calMethod(week, calendar.getTimeInMillis()),
                     intervalMillis, sender);
         } else {
             if (flag == 0) {
@@ -127,5 +133,27 @@ public class Utils {
             }
         }
         return time;
+    }
+
+    public static <T>Callback.Cancelable Get(String url, Map<String,String> map, Callback.CommonCallback<T> callback){
+        RequestParams params=new RequestParams(url);
+        if(null!=map){
+            for(Map.Entry<String, String> entry : map.entrySet()){
+                params.addQueryStringParameter(entry.getKey(), entry.getValue());
+            }
+        }
+        Callback.Cancelable cancelable = x.http().get(params, callback);
+        return cancelable;
+    }
+
+    public static <T>Callback.Cancelable Post(String url, Map<String,String> map, Callback.CommonCallback<T> callback){
+        RequestParams params=new RequestParams(url);
+        if(null!=map){
+            for(Map.Entry<String, String> entry : map.entrySet()){
+                params.addParameter(entry.getKey(), entry.getValue());
+            }
+        }
+        Callback.Cancelable cancelable = x.http().post(params, callback);
+        return cancelable;
     }
 }
