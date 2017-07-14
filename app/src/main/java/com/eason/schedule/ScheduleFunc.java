@@ -6,6 +6,7 @@ import com.eason.schedule.data.ExtraData;
 import com.eason.schedule.data.LessonData;
 
 import org.xutils.DbManager;
+import org.xutils.db.sqlite.WhereBuilder;
 import org.xutils.ex.DbException;
 import org.xutils.x;
 
@@ -194,32 +195,34 @@ public class ScheduleFunc{
     }
 
     public void clear(){
-        List<LessonData> lessonDatas = findAll();
-        for(LessonData ld : lessonDatas){
-            lesson = ld;
-            delete();
+        try {
+            db.delete(LessonData.class, WhereBuilder.b());
+        } catch (DbException e) {
+            e.printStackTrace();
         }
     }
 
     public void sync(List<LessonData> lessonDatas){
-        for(LessonData ld : lessonDatas){
-            lesson = ld;
-            add();
+        try {
+            db.save(lessonDatas);
+        } catch (DbException e) {
+            e.printStackTrace();
         }
     }
 
     public void clearExtra(){
-        List<ExtraData> extraDatas = getAllExtra();
-        for(ExtraData ed : extraDatas){
-            extra = ed;
-            deleteExtra();
+        try {
+            dbExtra.delete(ExtraData.class, WhereBuilder.b());
+        } catch (DbException e) {
+            e.printStackTrace();
         }
     }
 
     public void syncExtra(List<ExtraData> extraDatas){
-        for(ExtraData ed : extraDatas){
-            extra = ed;
-            addExtra();
+        try {
+            dbExtra.save(extraDatas);
+        } catch (DbException e) {
+            e.printStackTrace();
         }
     }
 

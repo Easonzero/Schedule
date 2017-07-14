@@ -4,12 +4,14 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
+import com.eason.schedule.data.ExtraData;
 import com.eason.schedule.data.LessonData;
 import com.eason.schedule.data.ServerExtraData;
 import com.eason.schedule.data.ServerLessonData;
 import com.eason.schedule.data.UserData;
 
 import org.xutils.DbManager;
+import org.xutils.db.sqlite.WhereBuilder;
 import org.xutils.ex.DbException;
 import org.xutils.x;
 
@@ -118,15 +120,11 @@ public class HttpsFunc {
     public void upload(List<ServerLessonData> lessonDatas,List<ServerExtraData> extraDatas){
         try {
             DbManager db = getDB("serverLesson");
-            ServerLessonData sld = new ServerLessonData();
-            sld.setUid(userData.getUid());
-            db.delete(sld);
+            db.delete(ServerLessonData.class, WhereBuilder.b("uid","=",userData.getUid()));
             db.save(lessonDatas);
             db.close();
             DbManager dbExtra = getDB("serverExtra");
-            ServerExtraData sed = new ServerExtraData();
-            sed.setUid(userData.getUid());
-            dbExtra.delete(sed);
+            dbExtra.delete(ServerExtraData.class,WhereBuilder.b("uid","=",userData.getUid()));
             dbExtra.save(extraDatas);
             dbExtra.close();
             handler.sendEmptyMessage(1);

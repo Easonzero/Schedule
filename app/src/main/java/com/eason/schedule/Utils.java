@@ -81,7 +81,7 @@ public class Utils {
         PendingIntent sender = PendingIntent.getBroadcast(context, id, intent, PendingIntent
                 .FLAG_CANCEL_CURRENT);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            am.setWindow(AlarmManager.RTC_WAKEUP, calMethod(week, calendar.getTimeInMillis()),
+            am.setWindow(AlarmManager.RTC_WAKEUP, 0,//calMethod(week, calendar.getTimeInMillis()),
                     intervalMillis, sender);
         } else {
             if (flag == 0) {
